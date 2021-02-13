@@ -7,8 +7,8 @@ class DataSelection:
         self.data_options = list()
         self.choice = None
         self.classification = [df.load_iris()]
-        self.regression = [df.load_boston(return_X_y=True), df.load_diabetes(return_X_y=True)]
-
+        self.regression = ['load_boston', 'load_diabetes']
+        self.regression_datasets = {'load_boston': df.load_boston(return_X_y=True), 'load_diabetes': df.load_diabetes(return_X_y=True)}
     def __repr__(self):
         return f"{self.classification} \n {self.regression}"
 
@@ -28,7 +28,8 @@ class DataSelection:
         follow_up = 'Now you can choose your dataset: '
         next_options = chosen
         selected_data = pick(next_options, follow_up, min_selection_count=1)
-        X, y = selected_data
+        X, y = self.regression_datasets[selected_data[0]]
+        # X, y = selected_data
         # load_data = df.selected_data[0]
 
         return X, y
