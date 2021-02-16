@@ -20,7 +20,6 @@ class DataSelection:
         options = ['classification', 'regression']
 
         # Regression Data or Classification Data
-
         selected = pick(options, title, min_selection_count=1)
         if selected[0] == 'classification':
             chosen = self.classification

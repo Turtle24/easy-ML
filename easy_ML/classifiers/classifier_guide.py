@@ -1,14 +1,15 @@
 from sklearn import linear_model
 from alive_progress import alive_bar
 
-class FitHelper(LinearRegression):
-    
-    self.reg_fit = fit
-        
+class Guide:
+    self.model = None
+    self.next = None
+    self.more_info = ""
+    self.steps = {'step 1': 'Select data', 'step 2': 'Choose Model', 'step 3': 'Train test split', 'step 4': 'Fit data to model', 'step 5': 'Predict'}    
 
     def __repr__(self):
 
-        return "fit_helper"
+        return 'guides you through the ML process'
 
     # Brief Explaination of model 
     def explain_fit(self):
