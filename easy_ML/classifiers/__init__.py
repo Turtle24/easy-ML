@@ -1,2 +1,1 @@
-from easy_ML.classifiers.classifier_guide import fit_helper
-from easy_ML.data_loaders.data_selection import DataSelection
+from classifier_guide import Guide
